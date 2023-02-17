@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="header">
+        <img src="images/logo.png" id="sne">
+        <div id="navs">
+            <div class="hell">Collections</div>
+            <div class="hell">Men</div>
+            <div class="hell">Women</div>
+            <div class="hell">About</div>
+            <div class="hell">Contact</div>
+        </div>
+        <img src="images/icon-cart.png" id="crt" onclick="bello()">
+        <img src="images/image-avatar.png" id="baba">
+    </div>
+    <div id="cart"></div>
+    <hr id="hrr">
+
+    <div id="coros">
+        <img src="images/img1a.jpg" id="bigimg2" onclick="corosal()">
+        <div id="thumb2">
+        <img src="images/img1.jpg" class="thu" id = "img1" onclick="hello(1)">
+        <img src="images/img2.jpg" class="thu" id = "img2" onclick="hello(2)">
+        <img src="images/img3.jpg" class="thu" id="img3" onclick="hello(3)">
+        <img src="images/img4.jpg" class="thu" id="img4" onclick="hello(4)">
+        </div>
+        <img id="prev" src="images/icon-previous.png" onclick="prev()"></img>
+        <img id="next" src="images/icon-next.png" onclick="next()"></img>
+        <img src="images/icon-close.png" id="cls" onclick="jello()">
+
+    </div>
+    <div id="women">
+        <img src="images/img1a.jpg" id="bigimg" onclick="corosal()">
+        <div id="thumb">
+        <img src="images/img1.jpg" class="thu" id = "img1" onclick="hello(1)">
+        <img src="images/img2.jpg" class="thu" id = "img2" onclick="hello(2)">
+        <img src="images/img3.jpg" class="thu" id="img3" onclick="hello(3)">
+        <img src="images/img4.jpg" class="thu" id="img4" onclick="hello(4)">
+        </div>
+    
+            <div id="helloh">
+                <h2>
+                    SNEAKER COMPANY
+                </h2>
+                <h1>
+        
+                    Fall Limited Sneakers
+                </h1>
+        
+                <p>
+            These low-profile sneakers are your perfect casual wear <br>
+            companion. Featuring a durable rubber outer sole, they'll <br>       
+            withstand everything the weather can offer.    
+            </p>
+            <h3>
+                $125.00
+            </h3>
+            <h4>50%</h4>
+            <h5>$250.00</h5>
+            <button>-</button>
+            <button>+</button>
+            <div class="divb"><button class="butt"><img src="images/icon-cart.png"> Add to cart</button></div>
+            </div>
+            </div>
+    
+
+</body>
+</html>
+
+<script>
+
+    var curr = 1;
+
+    function hello(i){
+        var v = document.getElementById("bigimg");
+        v.src = "images/img"+i+"a.jpg";
+    }
+    function corosal(){
+        var f = document.getElementById("coros");
+        f.style.display = "block";
+        var f = document.getElementById("women");
+        f.style.display = "none";
+    }
+    function corosala(){
+        console.log(100);
+        var f = document.getElementById("coros");
+        f.style.display = "none";
+    }
+
+    function next(){
+        var v = document.getElementById("bigimg2");
+        if(curr==4){
+            curr = 1;
+        }
+        else{
+            curr+=1;
+        }
+        v.src = "images/img"+curr+"a.jpg"
+    }
+    function jello(){
+        var f = document.getElementById("coros");
+        f.style.display = "none";
+        var f = document.getElementById("women");
+        f.style.display = "block";
+    }
+    function prev(){
+        var v = document.getElementById("bigimg2");
+        console.log(100);
+        if(curr==1){
+            curr = 4;
+        }
+        else{
+            curr-=1;
+        }
+        v.src = "images/img"+curr+"a.jpg"
+    }
+
+    function bello(){
+        document.getElementById("cart").style.display = "block"
+    }
+
+</script>
+
+
+<style>
+
+#helloh{
+    position: absolute;
+    top: 10%;
+    left: 50%;
+}
+
+#cls{
+    position: absolute;
+    top: 7%;
+    left: 35.5%;
+}
+@import url("fonts.ttf");
+#cart{
+    position: absolute;
+    width: 20%;
+    height: 20%;
+    border:  1px solid black;
+    top: 12%;
+    border-radius: 15px;
+    left: 75%;
+    display: none;
+    box-shadow: 0px 11px 35px 2px rgba(0, 0, 0, 0.40);
+}
+
+#crt{
+    position: absolute;
+    width: 2%;
+    top: 35%;
+    left: 83%;
+}
+
+#baba{
+    position: absolute;
+    width: 3%;
+    top: 25%;
+    left: 88%;
+}
+
+#hrr{
+    position: absolute;
+    width: 90%;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+
+}
+
+#prev,#next{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 25px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+}
+
+#prev{
+    top:35%;
+    left: 10%;
+}
+
+#next{
+    top:35%;
+    left: 37%;
+}
+
+#coros{
+    display: none;
+    position: absolute;
+    width: 100%;
+    height:100%;
+    top: 60%;
+    left: 70%;
+    transform: translate(-50%,-50%);
+}
+
+#thumb,#thumb2{
+    position: absolute;
+    top: 65%;
+    left: 12%;
+    width: 100%;
+    display: inline;
+}
+
+.thu{
+    width: 6%;
+    border-radius: 15px;
+}
+#women{
+    position:relative;
+    height: 100%;
+}
+
+#bigimg,#bigimg2{
+    position: absolute;
+    top: 10%;
+    left: 12%;
+    width: 25%;
+    border-radius: 15px;
+    aspect-ratio: 1;
+}
+
+#navs{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 20%;
+}
+
+.hell{
+    display: inline-block;
+    margin-left: 20px;
+    color: gray;
+}
+
+
+#sne{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 5%;
+}
+
+body,html{
+    height: 100%;
+    position: relative;
+    font-family: "Kumbh Sans",sans-serif;
+}
+
+#header{
+    position: relative;
+    height: 15%;
+}
+
+
+
+    h2 {
+        color: hsl(26, 100%, 55%);
+    }
+    h4{
+
+        color:orange;
+        background-color: hsl(25, 100%, 94%);
+        width:7%;
+        border-radius:5px;
+        text-align:center;
+        
+    }
+    h5{
+        color:grey;
+        text-decoration:line-through;
+    }
+    .butt{
+        color:white;
+        background: orange;
+        
+    }
+    .butt:hover{
+        color:grey;
+        background-color:hsl(25, 100%, 94%);
+    }
+
+</style>
